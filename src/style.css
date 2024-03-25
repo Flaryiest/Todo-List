@@ -1,0 +1,177 @@
+@font-face {
+    font-family: "Roboto-Light";
+    src: url("./Roboto-Light.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Roboto-Medium";
+    src: url("./Roboto-Medium.ttf") format("truetype");
+}
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+
+.content {
+    display: flex;
+
+}
+
+.sidebar {
+    height: 100dvh;
+    width: 17dvw;
+    background-color: #F9F8EB;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.newProject {
+    margin-top: 5dvh;
+    display: flex;
+    align-items: center;
+}
+.newProjectButton {
+    margin-left: 0.5dvw;
+    background-color: #F9F8EB;
+    border: none;
+    font-size: 1.5em;
+    font-family: "Roboto-Light";
+    text-align: center;
+
+}
+.newProjectButton:hover {
+    background-color: lightblue;
+}
+
+.sidebarHero {
+    margin-top: 3dvh;
+}
+header {
+    width: 83dvw;
+    height: 7dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Roboto-Medium";
+    font-size: calc(1em + 0.5dvw);
+    border-style: solid;
+    border-color: #000;
+    border-bottom-width: 2px;
+}
+h1 {
+    font-family: "Roboto-Medium";
+    font-size: calc(0.75em + 0.5dvw);
+}
+h2 {
+    font-family: "Roboto-Medium";
+    font-size: calc(0.5em + 0.5dvw);
+}
+.darkenBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 90;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.3;
+}
+
+.inputField {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40dvh;
+    height: 25dvh;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    z-index: 100;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inputButton {
+    font-family: "Roboto-Medium";
+    box-shadow: none;
+    border-style: solid;
+    width: 68px;
+    height: 32px;
+    border-radius: 4px;
+}
+.submitProjectButton {
+    background-color: #800080;
+    color: white;
+    border-color: #800080;
+
+}
+
+.cancelProjectButton {
+    background-color: #EADEBD;
+    color: black;
+    border-color: #EADEBD;
+}
+.createNewProjectFormButtons {
+    display: flex;
+    gap: 16px;
+    margin-top: 8px;
+}
+
+.projectContainer {
+    display: flex;
+    align-items: center;
+}
+
+.project {
+    font-family: "Roboto-Light";
+    font-size: 1em;
+}
+.project:hover {
+    background-color: rgb(208, 208, 208);
+}
+
+.createNewTaskButton {
+    margin-left: 0.5dvw;
+    background-color: #F9F8EB;
+    border: none;
+    font-size: 1em;
+    font-family: "Roboto-Light";
+    text-align: center;
+    /* fix this it is not aligned with project text */
+}
+.createNewTaskButton:hover {
+    background-color: rgb(208, 208, 208);
+}
