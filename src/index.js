@@ -9,6 +9,8 @@ newProjectButton.addEventListener("click", function() {
   document.body.appendChild(createNewProject(createNewPrompt()))
 })
 
+let projectTaskList = []
+
 function darkenBackground() {
     const element = document.createElement('div')
     element.classList.add("darkenBackground")
@@ -60,12 +62,13 @@ function createNewProject(prompt) {
   createNewProjectFormButtons.classList.add("createNewProjectFormButtons")
   createNewProjectFormButtons.appendChild(cancelProjectButton)
   createNewProjectFormButtons.appendChild(submitProjectButton)
-
+  submitProjectNameLabel.appendChild(submitProjectNameInput)
   createNewProjectForm.appendChild(submitProjectNameLabel)
-  createNewProjectForm.appendChild(submitProjectNameInput)
   createNewProjectForm.appendChild(createNewProjectFormButtons)
 
   submitProjectButton.addEventListener("click", function() {
+    projectTaskList.push("test")
+    
     createNewProjectFinished(submitProjectNameInput.value)
   })
   
@@ -75,7 +78,6 @@ function createNewProject(prompt) {
 }
 
 function createNewProjectFinished(projectName) {
-  console.log(projectName)
   revertScreenChanges()
   const projectContainer = document.createElement("div")
   projectContainer.classList.add("projectContainer")
@@ -107,16 +109,49 @@ function createProjectContent(projectName) {
 }
 
 function createNewTask(prompt) {
+
+  const createNewTaskForm = document.createElement("form")
+  
   const createNewTaskHeader = document.createElement("h1")
   createNewTaskHeader.classList.add("createNewTaskHeader")
   createNewTaskHeader.textContent = "Create New Task"
-  const createNewTaskForm = document.createElement("form")
-  const createNewTaskCancelButton = createInputButton("createNewTaskCancelButton", "Cancel")
-  const createNewTaskSubmitButton = createInputButton("createNewTaskSubmitButton", "Submit")
 
-  createNewTaskForm.appendChild(createNewTaskCancelButton)
-  createNewTaskForm.appendChild(createNewTaskSubmitButton)
+  const createNewTaskNameInput = document.createElement("input")
+  createNewTaskNameInput.setAttribute("id", "createNewTaskNameInput")
+  createNewTaskNameInput.setAttribute("name", "createNewTaskNameInput")
+  const createNewTaskNameInputLabel = document.createElement("label")
+  createNewTaskNameInputLabel.setAttribute("for", "createNewTaskNameInput")
+  createNewTaskNameInputLabel.textContent = "Name: "
+  
+  const createNewTaskCancelButton = createInputButton("createNewTaskCancelButton", "Cancel")
+  createNewTaskCancelButton.setAttribute("type", "button")
+  const createNewTaskSubmitButton = createInputButton("createNewTaskSubmitButton", "Submit")
+  createNewTaskSubmitButton.setAttribute("type", "button")
+  const createNewTaskButtons = document.createElement("div")
+  createNewTaskButtons.appendChild(createNewTaskCancelButton)
+  createNewTaskButtons.appendChild(createNewTaskSubmitButton)
+
+  createNewTaskNameInputLabel.appendChild(createNewTaskNameInput)
+  createNewTaskForm.appendChild(createNewTaskNameInputLabel)
+  createNewTaskForm.appendChild(createNewTaskButtons)
   prompt.appendChild(createNewTaskHeader)
   prompt.appendChild(createNewTaskForm)
+  createNewTaskCancelButton.addEventListener("click", function() {
+    revertScreenChanges()
+  })
+  createNewTaskSubmitButton.addEventListener("click", function() {
+    console.log(createNewTaskNameInput.value)
+  })
   return prompt
 }
+
+function createNewTaskFinished(taskName) {
+
+}
+
+function createTaskList(projectName) {
+  this.project = projectName
+  this.tasks = []
+  return {project, tasks}
+}
+console.log(createTaskList("test"))

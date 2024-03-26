@@ -90,6 +90,10 @@ header {
     border-color: #000;
     border-bottom-width: 2px;
 }
+.taskList {
+    height: 93dvh;
+}
+
 h1 {
     font-family: "Roboto-Medium";
     font-size: calc(0.75em + 0.5dvw);
@@ -174,4 +178,8 @@ h2 {
 }
 .createNewTaskButton:hover {
     background-color: rgb(208, 208, 208);
+}
+
+html {
+    overflow: hidden;
 }
