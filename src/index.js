@@ -158,8 +158,10 @@ function createNewTask(prompt) {
 function createNewTaskFinished(taskName) {}
 
 function createTaskList(projectName) {
-  this.project = projectName;
-  this.tasks = [];
+  project = projectName;
+  tasks = [];
   return {project, tasks};
 }
 console.log(createTaskList('test'));
+// temp instead of using createTaskList factory, just use basic - projectTaskLists.push([projectName, [] ])
+// then use this by checking projectTaskLists[i][0] for the project name with for loop
